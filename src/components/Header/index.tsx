@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import logo from "../../../public/images/logo.svg";
 import Image from "next/image";
 import { SignInButton } from "../SignInButton";
+
 export function Header() {
   return (
     <header className={styles.headerContainer}>
