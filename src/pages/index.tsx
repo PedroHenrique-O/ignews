@@ -1,3 +1,11 @@
+import Head from "next/head";
+
 export default function Home() {
-  return <h1>Next first class</h1>;
+  return (
+    <>
+      <Head>
+        <title>Início | IG News</title>
+      </Head>
+    </>
+  );
 }
