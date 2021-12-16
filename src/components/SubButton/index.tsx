@@ -15,7 +15,7 @@ export function SubButton({ priceId }: SubButtonProps) {
     }
     //criar checkout session
     try {
-      const response = await api.post("/subscribe");
+      const response = await api.post("/auth/subscribe");
 
       const { sessionId } = response.data;
 

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "../../services/stripe";
+import { stripe } from "../../../services/stripe";
 import { getSession } from "next-auth/react";
-import { fauna } from "../../services/fauna";
+import { fauna } from "../../../services/fauna";
 import { query as q } from "faunadb";
 
 type User = {
@@ -34,6 +34,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           data: { stripe_custumer_id: stripeCoutumer.id },
         })
       );
+
+      console.log("aaaaaaaaa", user);
 
       custumerId = stripeCoutumer.id;
     }
