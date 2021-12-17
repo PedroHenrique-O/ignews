@@ -44,9 +44,9 @@ export default function PostPreview({ post }: PostPreviewProps) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <div className={styles.readMore}>
-            Wanna read more?
+            Quer ler mais?
             <Link href="/">
-              <a>Subscribe now 😊</a>
+              <a>Inscreva-se!</a>
             </Link>
           </div>
         </article>
