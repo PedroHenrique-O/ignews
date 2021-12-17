@@ -12,7 +12,7 @@
 
 <h1>About the application: </h1>
 
-<p> A app é um blog do tipo "newsletter" onde o usuário pode ler o conteúdo completo apenas se possuir inscrição ativa. <br/>
+<p> A aplicação é um blog do tipo "newsletter" onde o usuário pode ler o conteúdo completo apenas se possuir inscrição ativa. <br/>
 Todo o processo de pagamento através do cartão de crédito e feita utilizando a integração com o Stripe. </p>
 
 <h1> How to install </h1>
