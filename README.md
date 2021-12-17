@@ -40,39 +40,11 @@ GITHUB_CLIENT_ID =
 GITHUB_CLIENT_SECRET =
 ```
 
-> Atenção: É necessário criar numa conta no stripe, github, faunbaDB e Prismic para rodar o projeto.
-
-> Após isso crie um arquivo .env.local na raiz do projeto e o preecha com as keys da seguinte forma:
-
-```
-#stripe
-
-STRIPE_API_KEY =
-STRIPE_SUCCESS_URL =
-STRIPE_CANCEL_URL =
-NEXT_PUBLIC_STRIPE_PUBLIC_KEY =
-STRIPE_WEBHOOK_SECRET =
-```
-
-```
-#github
-
-GITHUB_CLIENT_ID =
-GITHUB_CLIENT_SECRET =
-```
-
 ```
 #faunaDB
 
 FAUNA_KEY =
 
-```
-
-```
-#PrismicCMS
-
-PRISMIC_END_POINT =
-PRISMIC_ACESS_TOKEN =
 ```
 
 ```
