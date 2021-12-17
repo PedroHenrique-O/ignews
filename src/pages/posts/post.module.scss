@@ -25,6 +25,12 @@
     font-size: 1.125rem;
     color: var(--grey-100);
 
+    &.previewContent {
+      background: linear-gradient(#a8a8b3, transparent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     p,
     ul {
       margin: 1.5rem, 0;
@@ -35,12 +41,6 @@
       li {
         margin: 0.5rem 0;
       }
-    }
-
-    &.previewContent {
-      background: linear-gradient(var(--grey-100), transparent);
-      background-clip: text;
-      // -webkit-text-fill-color: transparent;
     }
   }
 }

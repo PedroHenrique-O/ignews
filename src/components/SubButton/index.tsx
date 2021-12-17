@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 import { Puff } from "react-loading-icons";
 
 interface SubButtonProps {
@@ -18,7 +18,7 @@ export function SubButton({ priceId }: SubButtonProps) {
       signIn("github");
     }
 
-    if (session.activeSubscription) {
+    if (session?.activeSubscription) {
       router.push("/posts");
 
       return;
@@ -39,7 +39,7 @@ export function SubButton({ priceId }: SubButtonProps) {
 
   return (
     <button onClick={handleSub} className={styles.subscribeButton}>
-      {status === "loading" ? <Puff /> : "Subscribe now"}
+      {status === "loading" ? <Puff /> : "Inscreva-se agora!"}
     </button>
   );
 }
