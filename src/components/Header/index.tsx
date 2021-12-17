@@ -3,6 +3,8 @@ import logo from "../../../public/images/logo.svg";
 import Image from "next/image";
 import { SignInButton } from "../SignInButton";
 
+import { ActiveLink } from "../ActiveLink";
+
 export function Header() {
   return (
     <header className={styles.headerContainer}>
@@ -10,8 +12,13 @@ export function Header() {
         <Image src={logo} width="100" height="100" alt="logosvg" />
 
         <nav>
-          <a className={styles.active}> Home </a>
-          <a> Posts </a>
+          <ActiveLink activeClassName={styles.active} href="/" prefetch>
+            <a> Home </a>
+          </ActiveLink>
+
+          <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
+            <a> Posts </a>
+          </ActiveLink>
         </nav>
         <SignInButton />
       </div>
