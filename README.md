@@ -1,6 +1,6 @@
  
 
-![ignews](https://user-images.githubusercontent.com/55575751/146494005-f31a74e0-1ce1-4efb-be96-37a3fdf01dc1.gif)
+![ignews2](https://user-images.githubusercontent.com/55575751/146494423-6436d143-9a03-4f8f-b811-d0fa86a7299e.gif)
 
 <h1> Tecnologias usadas: </h1>
 
