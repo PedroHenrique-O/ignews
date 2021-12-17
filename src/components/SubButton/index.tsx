@@ -1,21 +1,31 @@
 import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { Puff } from "react-loading-icons";
 
 interface SubButtonProps {
   priceId: string;
 }
 export function SubButton({ priceId }: SubButtonProps) {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  const router = useRouter();
 
   async function handleSub() {
     if (!session) {
       signIn("github");
     }
-    //criar checkout session
+
+    if (session.activeSubscription) {
+      router.push("/posts");
+
+      return;
+    }
+
     try {
-      const response = await api.post("/auth/subscribe");
+      const response = await api.post("/subscribe");
 
       const { sessionId } = response.data;
 
@@ -29,7 +39,7 @@ export function SubButton({ priceId }: SubButtonProps) {
 
   return (
     <button onClick={handleSub} className={styles.subscribeButton}>
-      Subscribe now
+      {status === "loading" ? <Puff /> : "Subscribe now"}
     </button>
   );
 }
