@@ -2,7 +2,8 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./homes.module.scss";
-import avatar from "../../public/images/avatar.svg";
+// import avatar from "../../public/images/avatar.svg";
+import avatar2 from "../../public/images/undraw_book_reading_kx-9-s.svg";
 import { SubButton } from "../components/SubButton";
 import { stripe } from "../services/stripe";
 
@@ -21,18 +22,18 @@ export default function Home({ product }: HomeProps) {
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>🖐 Hey, welcome</span>
+          <span>🖐 Olá, bem-vindo!</span>
           <h1>
-            News about <br />
-            the <span>React</span> world.
+            Notícias do mundo <br />
+            da <span>Tecnologia</span>.
           </h1>
           <p>
-            Get acess to all publications <br />
-            <span>for {product.amount} month</span>
+            Tenha acesso a todas as publicações <br />
+            <span>por {product.amount} mensais</span>
           </p>
           <SubButton priceId={product.priceId} />
         </section>
-        <Image src={avatar} alt="girl" />
+        <Image width={500} height={300} src={avatar2} alt="girl" />
       </main>
     </>
   );
@@ -42,9 +43,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve("price_1K6oHXEeQHH0kUvItvA9wjvl");
   const product = {
     priceId: price.id,
-    amount: new Intl.NumberFormat("en-US", {
+    amount: new Intl.NumberFormat("pt-BR", {
       style: "currency",
-      currency: "USD",
+      currency: "BRL",
     }).format(price.unit_amount / 100),
   };
   return {
