@@ -36,7 +36,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         process.env.STRIPE_WEBHOOK_SECRET
       );
     } catch (er) {
-      console.log("erro trywebhooks: ", er);
       return res.status(400).send(`Webhook error: ${er.message}`);
     }
     const { type } = event;
@@ -51,11 +50,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               checkoutSession.subscription.toString(),
               checkoutSession.customer.toString()
             );
-            console.log(
-              "toString 0 :",
-              checkoutSession.subscription.toString()
-            );
-            console.log("customer :", checkoutSession.customer.toString());
 
             break;
           default:
