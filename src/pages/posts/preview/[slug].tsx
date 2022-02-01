@@ -29,7 +29,6 @@ export default function PostPreview({ post }: PostPreviewProps) {
     }
   }, [session]);
 
-  console.log(post);
   return (
     <>
       <Head>
@@ -68,7 +67,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const prismic = getPrismicClient();
 
   const response = await prismic.getByUID("post", String(slug), {});
-  console.log("response---------:", response);
 
   const post = {
     slug,
