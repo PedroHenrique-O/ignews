@@ -18,6 +18,7 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
+  
   return (
     <>
       <Head>
@@ -44,11 +45,14 @@ export default function Posts({ posts }: PostsProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
 
+
   const response = await prismic.query(
     [Prismic.predicates.at("document.type", "post")],
     {
       fetch: ["title", "content"],
       pageSize: 100,
+       
+      
     }
   );
 
@@ -69,8 +73,6 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     };
   });
-
-  //console.log(JSON.stringify(response, null, 2));
 
   return {
     props: { posts },

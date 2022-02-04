@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import Head from "next/head";
 import { RichText } from "prismic-dom";
+import Comments from "../../components/Comments";
 import { getPrismicClient } from "../../services/prismic";
 import styles from "./post.module.scss";
 
@@ -15,7 +16,6 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
-  console.log(post);
   return (
     <>
       <Head>
@@ -31,6 +31,8 @@ export default function Post({ post }: PostProps) {
           />
         </article>
       </main>
+      <Comments/>
+      
     </>
   );
 }
@@ -38,9 +40,9 @@ export default function Post({ post }: PostProps) {
 export const getServerSideProps: GetServerSideProps = async ({
   req,
   params,
+ 
 }) => {
   const session = await getSession({ req });
-  console.log(session);
 
   const { slug } = params;
 
