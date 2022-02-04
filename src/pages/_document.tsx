@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { Head, Html, Main, NextScript } from "next/dist/pages/_document";
-
+import Document, { Head, Html, Main, NextScript } from "next/Document";
+import faveicon from "../../public/favicon.png";
 export const repoName = "IgnewsBlog1";
 export default class MyDocument extends Document {
   render() {
